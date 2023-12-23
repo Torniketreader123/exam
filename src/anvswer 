@@ -1,0 +1,145 @@
+useState Hook:აღწერეთ  რა არის useState Hook React-ში. როგორი სინტაქსი აქვს და რის გაკეთების საშუალებას გვაძლევს??
+
+Answer: 
+
+import React, {useState } from 'react';
+
+function foo() {
+ 
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+export default MyComponent;
+
+
+useState aris hooki romelic igebs or  mnishvnelobas pirvelis  mnishvnelobas vatant tavidanve funqcias da meore funqciis am shemtxvevashi setcounti sashvalebit
+shegvidzlia pirvelis mdgomareobis shecvla
+
+
+
+Effects and the useEffect Hook:ახსენით რა არის useEffect Hook-ის მიზანი React-ში. მიეცით მაგალითი იმისა, თუ როგორ შეიძლება მისი გამოყენება მონაცემთა მისაღებად.
+
+Answer: 
+useEffect  aris hoki romlis sashvalebitac shegvidzlia gamovidzviot damatebiti renderi usefeqti  eshveba ertxel da inaxavs funqcias aseve vatant ert tavisufal strings rata 
+movusminot states cvlilebas 
+
+us
+import React, { useState, useEffect } from 'react';
+
+function PostComponent() {
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then(response => response.json())
+      .then(data => { setPost(data);
+      });
+  }, []); 
+
+
+
+
+
+
+Event Handling in Functional Components:როგორ მუშავდება მოვლენები React-ის კომპონენტებში? მიუთითეთ ღილაკზე დაწკაპუნების ღონისძიების დამმუშავებლის მაგალითი.
+
+Answer:
+reqaris komponentebshi movlenebi vitardeba reaqtiulad magalitad rodesac vawvebit ragac konkretul gilaks am dros cven vaxdent zemoqmedebas am komponentze
+vcvlit mis mnishvnelobas anu vaxdent gadaxatvas .
+
+
+
+
+
+
+
+Conditional Rendering in Functional Components:ახსენით, როგორ მუშაობს პირობითი რენდერი React ფუნქციურ კომპონენტებში. მიეცით მაგალითი პირობაზე დაფუძნებული კომპონენტის გამოყვანის.Ï
+
+Answer: 
+import React, { useState } from 'react';
+
+function ConditionalRenderingExample() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+     setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+   setIsLoggedIn(false);
+  };
+return (
+    <div>
+      {isLoggedIn ? (
+        
+        <div>
+          <h2>Welcome, User!</h2>
+          <button onClick={handleLogout}>Log Out</button>
+        </div>
+      ) : (
+       
+        <div>
+          <h2>Please Log In</h2>
+          <button onClick={handleLogin}>Log In</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default ConditionalRenderingExample;
+
+
+
+
+
+
+
+
+
+React Props: აღწერეთ როგორ და რაში გამოიყენება props React-ის კომპონენტებში. მოიყვანეთ მაგალითი თქვენი ახსნის საილუსტრაციოდ.
+
+props  gamoiyeneba reaqtshi informaciis gacvlistvis  shegvidzlia komponentidan komponentshi informacia vatanot  da amit movaxdinot iventebi 
+import React from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const name = 'John Doe';
+  const age = 15;
+
+  return (
+    <div>
+      <h1>comp</h1>
+      <ChildComponent name={name} age={age} />
+    </div>
+  );
+}
+
+export default ParentComponent;
+
+
+import React from 'react';
+
+function ChildComponent(props) {
+return (
+    <div>
+      <h2>Child Component</h2>
+      <p>Name: {props.name}</p>
+      <p>Age: {props.age}</p>
+    </div>
+  );
+}
+
+export default ChildComponent;
+
+
