@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
 
-interface Post {
+
+'use client'
+
+
+import React, { useState} from 'react';
+
+
+interface PostPage {
   id: number;
   title: string;
   description: string;
   date: string; 
 }
 
-const Post: React.FC = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+const PostPage: React.FC = () => {
+  const [posts, setPosts] = useState<PostPage[]>([]);
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
 
@@ -18,7 +24,7 @@ const Post: React.FC = () => {
       return;
     }
 
-    const newPost: Post = {
+    const newPost: PostPage = {
       id: new Date().getTime(),
       title,
       description,
@@ -56,4 +62,7 @@ const Post: React.FC = () => {
   );
 };
 
-export default Post;
+export default PostPage;
+
+
+

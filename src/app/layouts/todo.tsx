@@ -1,12 +1,14 @@
+"use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
 
 interface Todo {
   id: number;
   text: string;
 }
 
-const Todo: React.FC = () => {
+const TodoPage: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [inputValue, setInputValue] = useState<string>('');
 
@@ -19,6 +21,8 @@ const Todo: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    
+    
    
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
@@ -67,4 +71,4 @@ const Todo: React.FC = () => {
   );
 };
 
-export default Todo;
+export default TodoPage;
